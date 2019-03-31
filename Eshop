@@ -1,0 +1,233 @@
+package e.shop;
+import java.util.*;
+
+
+
+
+public class EShop 
+{
+  
+    /*
+    
+    NOT WORKING PROPERLY
+
+    
+    */
+    
+    
+    public static void main(String[] args) 
+    {
+       Scanner in = new Scanner(System.in);
+       Scanner to = new Scanner(System.in);
+       Scanner an = new Scanner(System.in);
+       
+       
+        List<String> FirstName = new ArrayList<>(1);
+        List<String> LastName = new ArrayList<>(1);
+        List<String> Address = new ArrayList<>(1);
+        List<Integer> Quantities = new ArrayList<>(13);
+        List<Boolean> Items = new ArrayList<>(13);
+        List<Integer> Cost = new ArrayList<>(13);
+        List<Integer> Due = new ArrayList<>(1);
+         
+        String ch,opt,ans,a;
+        int num,i,quan;
+        
+        
+        
+        
+        System.out.println("This is the available products for purchase (for now) :");
+        System.out.println("0.PC Case(10T7BTY27)___66$");
+        System.out.println("1.Mother Board(5739GHT3DS)___140$");
+        System.out.println("2.CPU(DH33678AS)___160$");
+        System.out.println("3.RAM 8GB 3000Mhz (F3000/57298UDFK2)___80$");
+        System.out.println("4.OTX 930 6GB Foundairs edition (492DH2995J)__190$");
+        System.out.println("5.HDD 1  1TB(HDF7628)__40$");
+        System.out.println("6.HDD 2  2TB(KGYW53GHD)__58$");
+        System.out.println("7.SSD 1  120GB(ASDA937D)___30$");
+        System.out.println("8.SSD 2 250GB(ASDH4332H)____58$");
+        System.out.println("9.Power Supply 1 500W,Semi modular,80+ Bronze(DBHF3823)_50$");
+        System.out.println("10.Power Supply 2 1000W,Full modular,80+ Titanium(DSFN12387)__270$");
+        System.out.println("11.CPU Cooler 1(DSFHS7234)__35$");
+        System.out.println("12.CPU Cooler 2(583HCV6S7)____80$");
+        
+        
+        
+        do
+        {
+             for (i = 0 ; i < 12 ; i++)
+             {
+                Quantities.add(i,null);
+                Items.add(i,false);
+                Cost.add(i,null);
+             }
+             Due.add(0,null);      
+             int cost = 0;
+             FirstName.add(null);
+             LastName.add(null);
+             Address.add(null);
+             
+             System.out.printf("\n");
+             System.out.println("Please enter your first name :");
+             FirstName.set(0,in.nextLine());
+            
+            
+             System.out.println("Please enter your last name :");
+             LastName.set(0,in.nextLine());
+            
+            
+            System.out.println("Please enter your address :");
+             Address.set(0,in.nextLine());
+            
+             
+          
+             
+                do{
+                  System.out.println("Please choose one of the available products (0-12)");
+                    num = in.nextInt();
+                    
+                    while( num < 0 || num > 12)
+                    {
+                      System.out.println("Please choose one of the available products (0-12)");
+                    num = in.nextInt();  
+                    }
+                    
+                      System.out.println("Please choose the quantity");
+                      quan = in.nextInt();
+
+                             if ( num == 0)
+                             {
+                                  Quantities.set(num,quan);
+                                  cost =  cost + quan*66;
+                                  Cost.set(0,cost);
+                                  
+                             }
+
+                             else if  (num == 1)
+                             {
+                              Quantities.set(num,quan);
+                              cost =  cost + quan*140;
+                               Cost.set(1,cost);
+                             }
+                             else if  (num == 2)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*160;
+                                 Cost.set(2,cost);
+                            }   
+                                else if  (num == 3)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*80;
+                                 Cost.set(3,cost);
+                            }   
+                            else if  (num == 4)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*190;
+                                 Cost.set(4,cost);
+                            }   
+                            else if  (num == 5)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*40;
+                                 Cost.set(5,cost);
+                            }   
+                            else if  (num == 6)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*58;
+                                 Cost.set(6,cost);
+                            }   
+                            else if  (num == 7)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*30;
+                                 Cost.set(7,cost);
+                            }   
+                            else if  (num == 8)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*58;
+                                 Cost.set(8,cost);
+                            }   
+                            else if  (num == 9)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*50;
+                                 Cost.set(9,cost);
+                            }   
+                            else if  (num == 10)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*270;
+                                 Cost.set(10,cost);
+                            }   
+                            else if  (num == 11)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*35;
+                                 Cost.set(11,cost);
+                                 
+                            }   
+                            else if  (num == 12)
+                            {
+                                 Quantities.set(num,quan);
+                                 cost =  cost + quan*80;
+                                 Cost.set(12,cost);
+                            }
+                             
+                         System.out.printf("Your total cost is : %d$\n", cost);
+                         System.out.printf("\n");
+                         System.out.printf("You choose to buy the %d ST item %d times,would you like to cancel your purchase? (YES/NO)\n",num,Quantities.get(num));   
+                         ans = to.nextLine();
+                         if ("YES".equals(ans))
+                         {
+                          cost = cost -Cost.get(num);
+                               Quantities.set(num,Quantities.get(num)-quan);
+                               Cost.set(num,Cost.get(num)- cost);
+                         }
+                         else
+                         {
+                             Items.set(num,true);
+                         }
+                           Due.set(0,cost);
+                     System.out.printf("Do you want to continue your purchases? (YES/NO)\n");
+                     a = an.nextLine();
+                  }while(!"NO".equals(a));
+            
+                
+                for(i = 0; i < 12 ; i++)
+                {
+                    if(Items.get(i) == true)
+                    {
+                      System.out.printf("you choose to buy the %dST item %d times,would you like to pay for it? (YES/NO)\n",i,Quantities.get(i));
+                    }
+                    
+                 ans = to.nextLine();
+                 
+                 if("YES".equals(ans))
+                 {
+                     Due.set(0,cost-Cost.get(i));
+                 }
+                }
+                
+                
+            System.out.printf("%s",FirstName.get(0));
+            System.out.printf("");
+            System.out.printf("%s",LastName.get(0));
+            System.out.printf("\n");
+            System.out.printf("%s",Address.get(0));
+            System.out.printf("\n");
+            System.out.printf("The cost of all the products you are willing to buy is : %d",cost);
+            System.out.printf("You own : %d",Due.get(0));
+                
+                
+         System.out.println("Do you want to continue with that programm : (YES / NO)");
+         ch = in.nextLine();
+        }while(!"NO".equals(ch));
+        
+     
+    }
+    
+}
